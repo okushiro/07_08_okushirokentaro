@@ -19,6 +19,8 @@ class TaskListTableViewController: UITableViewController, TaskCollectionDelegate
         super.viewDidLoad()
         
         taskCollection.delegate = self
+        
+        navigationItem.leftBarButtonItem = editButtonItem
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -61,6 +63,23 @@ class TaskListTableViewController: UITableViewController, TaskCollectionDelegate
         return cell
     }
     
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        //通常走っていた処理はそのまま走らせる。
+        super.setEditing(editing, animated: true)
+        
+        //自分が持っているテーブルビューのeditingを更新する。
+        self.tableView.setEditing(editing, animated: animated)
+    }
+
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //dataを消してから
+        taskCollection.tasks.remove(at: indexPath.row)
+        taskCollection.save()
+        //tableViewCellの削除
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 
     /*
     // Override to support conditional editing of the table view.
