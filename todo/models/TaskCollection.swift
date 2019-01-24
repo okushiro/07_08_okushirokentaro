@@ -14,7 +14,7 @@ protocol TaskCollectionDelegate: class {
 
 class TaskCollection{
 
-    static  let shared = TaskCollection()
+    static let shared = TaskCollection()
     let userDefaults = UserDefaults.standard
     
     weak var delegate: TaskCollectionDelegate?

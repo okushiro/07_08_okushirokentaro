@@ -65,20 +65,42 @@ class TaskListTableViewController: UITableViewController, TaskCollectionDelegate
     
     
     override func setEditing(_ editing: Bool, animated: Bool) {
-        //通常走っていた処理はそのまま走らせる。
-        super.setEditing(editing, animated: true)
         
-        //自分が持っているテーブルビューのeditingを更新する。
+        super.setEditing(editing, animated: true)
         self.tableView.setEditing(editing, animated: animated)
     }
 
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        //dataを消してから
+
         taskCollection.tasks.remove(at: indexPath.row)
         taskCollection.save()
-        //tableViewCellの削除
+
         tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        performSegue(withIdentifier: "toEdit", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEdit" {
+        
+            guard let path = tableView.indexPathForSelectedRow else{
+                return
+            }
+            
+            let next = segue.destination as? EditTableViewController
+            let _ = next?.view
+            
+            next?.index = path.row
+            
+        }
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
     }
 
     /*

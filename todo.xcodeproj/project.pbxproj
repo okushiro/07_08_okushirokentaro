@@ -15,6 +15,7 @@
 		D492F62421F2CA69005A4626 /* TaskCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D492F62321F2CA69005A4626 /* TaskCollection.swift */; };
 		D492F62621F2CB74005A4626 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D492F62521F2CB74005A4626 /* TaskViewController.swift */; };
 		D492F62821F2D156005A4626 /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D492F62721F2D156005A4626 /* task.swift */; };
+		D492F62C21F6970F005A4626 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D492F62B21F6970F005A4626 /* EditTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D492F62321F2CA69005A4626 /* TaskCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollection.swift; sourceTree = "<group>"; };
 		D492F62521F2CB74005A4626 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		D492F62721F2D156005A4626 /* task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
+		D492F62B21F6970F005A4626 /* EditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				D492F62121F2BC62005A4626 /* TaskListTableViewController.swift */,
 				D492F62521F2CB74005A4626 /* TaskViewController.swift */,
+				D492F62B21F6970F005A4626 /* EditTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D492F62221F2BC62005A4626 /* TaskListTableViewController.swift in Sources */,
+				D492F62C21F6970F005A4626 /* EditTableViewController.swift in Sources */,
 				D492F62621F2CB74005A4626 /* TaskViewController.swift in Sources */,
 				D492F60E21F2BACA005A4626 /* AppDelegate.swift in Sources */,
 				D492F62421F2CA69005A4626 /* TaskCollection.swift in Sources */,
